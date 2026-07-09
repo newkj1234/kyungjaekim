@@ -672,11 +672,51 @@ main{
 
 }
 
-.project-info h2{
+.project-info h1{
 
-    font-size:32px;
+    font-size:2.4rem;
+
+    line-height:1.05;
+
+    margin:0;
+
+    font-weight:700;
+
+}
+
+.project-info h1 span{
 
     font-weight:400;
+
+    opacity:.72;
+
+    margin-left:0.5rem;
+
+    font-size:1rem;
+
+}
+
+.project-info h2{
+
+    font-size:1.1rem;
+
+    font-weight:500;
+
+    opacity:.78;
+
+    margin:18px 0 14px;
+
+}
+
+.project-quote{
+
+    font-style:italic;
+
+    opacity:.72;
+
+    margin-bottom:20px;
+
+    white-space:pre-line;
 
 }
 
@@ -684,7 +724,23 @@ main{
 
     margin-top:8px;
 
-    opacity:.65;
+    opacity:.75;
+
+    line-height:1.75;
+
+}
+
+.project-credits{
+
+    margin-top:20px;
+
+}
+
+.project-credits p{
+
+    margin:0 0 6px;
+
+    opacity:.85;
 
 }
 

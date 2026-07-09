@@ -11,9 +11,20 @@ export default function ProjectModal({ work, onClose }) {
         <video src={work.video} controls autoPlay playsInline />
 
         <div className="project-info">
-          <h2>{work.title}</h2>
-          <p>{work.year}</p>
-          <p>{work.description ?? "No description available."}</p>
+          <h1>
+            {work.title}
+            <span> · {work.year}</span>
+          </h1>
+          {work.subtitle && <h2>{work.subtitle}</h2>}
+          {work.quote && <p className="project-quote">{work.quote}</p>}
+          {work.description && <p>{work.description}</p>}
+          {work.credits?.length ? (
+            <div className="project-credits">
+              {work.credits.map((credit, idx) => (
+                <p key={idx}>{credit}</p>
+              ))}
+            </div>
+          ) : null}
         </div>
       </div>
     </div>

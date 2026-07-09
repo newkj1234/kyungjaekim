@@ -8,6 +8,17 @@ const works = [
 
     year: "2017",
 
+    subtitle: "Koreanische Oper, Berlin, 2017",
+
+    quote:
+      "aus wessen verstorbenen Gauners zerplazten Hodensack kamst du hervor, du Geist?\nIss und geh fort, ich tu dasselbe.",
+
+    credits: [
+      "Tänzerin - Soomin Chae",
+      "Musik - Dream like Fantasy by Sol Daniel Kim, Dayong Yoon",
+      "Pagyeong by Hyunjhin Baik",
+    ],
+
     poster: "/images/works/work01.jpeg",
 
     video: "/videos/works/work01.mp4",
