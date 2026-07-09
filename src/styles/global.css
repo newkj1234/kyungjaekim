@@ -103,6 +103,12 @@ button{
 
     display:block;
 
+    background:none;
+
+    border:none;
+
+    padding:0;
+
 }
 
 .menu-button span{
@@ -117,7 +123,17 @@ button{
 
     background:white;
 
-    transition:top .25s ease, bottom .25s ease, transform .25s ease, opacity .25s ease;
+    transform-origin:center;
+
+    transition:
+
+        top .35s cubic-bezier(.22,.61,.36,1),
+
+        bottom .35s cubic-bezier(.22,.61,.36,1),
+
+        transform .35s cubic-bezier(.22,.61,.36,1),
+
+        opacity .35s cubic-bezier(.22,.61,.36,1);
 
 }
 
@@ -145,7 +161,7 @@ button{
 
 }
 
-.menu-toggle:checked + .menu-button span:first-child{
+.menu-button.open span:first-child{
 
     top:8px;
 
@@ -153,11 +169,23 @@ button{
 
 }
 
-.menu-toggle:checked + .menu-button span:last-child{
+.menu-button.open span:last-child{
 
     bottom:8px;
 
     transform:rotate(-45deg);
+
+}
+
+.menu-button.open:hover span:first-child{
+
+    transform:rotate(0deg);
+
+}
+
+.menu-button.open:hover span:last-child{
+
+    transform:rotate(90deg);
 
 }
 
