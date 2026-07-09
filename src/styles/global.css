@@ -725,7 +725,7 @@ main{
 .close-button{
     position:absolute;
     top:-80px;
-    right:-80;
+    right:16;
     width:42px;
     height:42px;
     display:flex;
