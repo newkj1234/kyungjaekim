@@ -68,9 +68,9 @@ Die Partitur liegt auf dem Lautsprecher aus, während die Komposition den Raum b
 
   video: "/videos/works/work02.mp4",
 
-  previewStart: 15,
+  previewStart: 20,
 
-  previewEnd: 30,
+  previewEnd: 40,
 
 },
 
