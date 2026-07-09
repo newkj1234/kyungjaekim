@@ -90,49 +90,63 @@ export default function ProjectModal({ work, onClose }) {
 
         <div className="project-info">
 
-          <h1>
+          <h1>{work.title}</h1>
 
-            {work.title}
+          <p className="project-year">
 
-            <span> · {work.year}</span>
+            {work.year}
 
-          </h1>
+          </p>
 
-          {work.subtitle && (
+          <p className="project-medium">
 
-            <h2>{work.subtitle}</h2>
+            {work.medium}
 
-          )}
+          </p>
 
-          {work.quote && (
+          <p className="project-venue">
 
-            <p className="project-quote">
+            {work.venue}
 
-              {work.quote}
+          </p>
+
+          {work.text && (
+
+            <p className="project-text">
+
+              {work.text}
 
             </p>
 
           )}
 
-          {work.description && (
+          {work.materials?.length > 0 && (
 
-            <p>{work.description}</p>
+            <div className="project-materials">
 
-          )}
+              {work.materials.map((item, idx) => (
 
-          {work.credits?.length ? (
-
-            <div className="project-credits">
-
-              {work.credits.map((credit, idx) => (
-
-                <p key={idx}>{credit}</p>
+                <p key={idx}>{item}</p>
 
               ))}
 
             </div>
 
-          ) : null}
+          )}
+
+          {work.collaborators?.length > 0 && (
+
+            <div className="project-collaborators">
+
+              {work.collaborators.map((person, idx) => (
+
+                <p key={idx}>{person}</p>
+
+              ))}
+
+            </div>
+
+          )}
 
         </div>
 
