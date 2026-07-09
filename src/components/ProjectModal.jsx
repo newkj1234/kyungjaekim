@@ -2,6 +2,8 @@ import { useEffect } from "react";
 
 export default function ProjectModal({ work, onClose }) {
 
+  // ESC 키로 닫기
+
   useEffect(() => {
 
     const handleKeyDown = (e) => {
@@ -24,13 +26,41 @@ export default function ProjectModal({ work, onClose }) {
 
   }, [onClose]);
 
+  // 모달 열리면 뒤 스크롤 잠금
+
+  useEffect(() => {
+
+    if (work) {
+
+      document.body.style.overflow = "hidden";
+
+    } else {
+
+      document.body.style.overflow = "";
+
+    }
+
+    return () => {
+
+      document.body.style.overflow = "";
+
+    };
+
+  }, [work]);
+
   if (!work) return null;
 
   return (
 
     <div className="project-modal" onClick={onClose}>
 
-      <div className="project-content" onClick={(e) => e.stopPropagation()}>
+      <div
+
+        className="project-content"
+
+        onClick={(e) => e.stopPropagation()}
+
+      >
 
         <button
 
@@ -68,15 +98,27 @@ export default function ProjectModal({ work, onClose }) {
 
           </h1>
 
-          {work.subtitle && <h2>{work.subtitle}</h2>}
+          {work.subtitle && (
 
-          {work.quote && (
-
-            <p className="project-quote">{work.quote}</p>
+            <h2>{work.subtitle}</h2>
 
           )}
 
-          {work.description && <p>{work.description}</p>}
+          {work.quote && (
+
+            <p className="project-quote">
+
+              {work.quote}
+
+            </p>
+
+          )}
+
+          {work.description && (
+
+            <p>{work.description}</p>
+
+          )}
 
           {work.credits?.length ? (
 
@@ -101,25 +143,3 @@ export default function ProjectModal({ work, onClose }) {
   );
 
 }
-
-useEffect(() => {
-
-  if (work) {
-
-    document.body.style.overflow = "hidden";
-
-  } else {
-
-    document.body.style.overflow = "";
-
-  }
-
-  return () => {
-
-    document.body.style.overflow = "";
-
-  };
-
-}, [work]);
-
-
